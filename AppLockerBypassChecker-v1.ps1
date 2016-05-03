@@ -29,11 +29,11 @@ foreach($_ in (Get-ChildItem C:\Temp -recurse -ErrorAction SilentlyContinue)){
 }
 
 # List folders where the executable was copied (and you have read access)
-Write-Host "The following paths allow write and read" -ForegroundColor Green
+Write-Host "The following paths allow write & read" -ForegroundColor Green
 Get-ChildItem C:\Temp -Filter ABCtestfile.exe -Recurse -ErrorAction SilentlyContinue | Select-Object FullName | Format-Table -AutoSize
 
 # List path of running executables
-Write-Host "The following paths allow write and execute" -ForegroundColor Green
+Write-Host "The following paths allow write & execute" -ForegroundColor Green
 (Get-Process ABCtestfile).MainModule | select FileName
 
 # Cleanup by stopping all created test processes
