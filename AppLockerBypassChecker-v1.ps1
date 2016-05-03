@@ -13,7 +13,7 @@
 # Note that some folder allows adding files, but not deleting or executing
 Get-ChildItem C:\Temp -Filter ABCtestfile.exe -Recurse -ErrorAction SilentlyContinue | Remove-Item -ErrorAction SilentlyContinue
 
-# Loop through C:\Temp, try to copy executable and - if successful - try to execute it.
+# Loop through C:Temp, try to copy executable and - if successful - try to execute it.
 # Some folders that allow copying but not executing will throw an Access Denied error
 foreach($_ in (Get-ChildItem C:\Temp -recurse -ErrorAction SilentlyContinue)){
     if($_.PSIsContainer)
@@ -29,7 +29,7 @@ foreach($_ in (Get-ChildItem C:\Temp -recurse -ErrorAction SilentlyContinue)){
 }
 
 # List folders where the executable was copied (and you have read access)
-Write-Host "The following paths allow write (and read)" -ForegroundColor Green
+Write-Host "The following paths allow write and read" -ForegroundColor Green
 Get-ChildItem C:\Temp -Filter ABCtestfile.exe -Recurse -ErrorAction SilentlyContinue | Select-Object FullName | Format-Table -AutoSize
 
 # List path of running executables
