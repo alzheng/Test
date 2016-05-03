@@ -14,7 +14,7 @@
 	<script language="JScript">
 		<![CDATA[
 	
-			var r = new ActiveXObject("WScript.Shell").Run('"C:\Temp\putty.exe"');	
+			var r = new ActiveXObject("WScript.Shell").Run('"C:\\Temp\\putty.exe"');	
 	
 		]]>
 </script>
